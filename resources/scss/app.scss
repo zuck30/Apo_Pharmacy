@@ -1,0 +1,234 @@
+// resources/scss/app.scss
+// Pharmacy Management System Styles
+
+// Variables
+$pharmacy-primary: #0ea5e9;
+$pharmacy-secondary: #8b5cf6;
+$pharmacy-success: #10b981;
+$pharmacy-warning: #f59e0b;
+$pharmacy-danger: #ef4444;
+$pharmacy-info: #3b82f6;
+
+// Bootstrap customization
+$primary: $pharmacy-primary;
+$secondary: $pharmacy-secondary;
+$success: $pharmacy-success;
+$warning: $pharmacy-warning;
+$danger: $pharmacy-danger;
+$info: $pharmacy-info;
+
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom styles
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+}
+
+// Card styles
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: white;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem 0.5rem 0 0 !important;
+    }
+}
+
+// Table styles
+.table {
+    th {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+        border-bottom: 2px solid #e5e7eb;
+        padding: 0.75rem 1rem;
+    }
+
+    td {
+        padding: 1rem;
+        vertical-align: middle;
+        border-color: #f3f4f6;
+    }
+
+    tbody tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #f9fafb;
+        }
+    }
+}
+
+// Button styles
+.btn {
+    font-weight: 500;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+
+    &.btn-primary {
+        background: linear-gradient(135deg, $pharmacy-primary, darken($pharmacy-primary, 10%));
+        border: none;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba($pharmacy-primary, 0.3);
+        }
+    }
+
+    &.btn-success {
+        background: linear-gradient(135deg, $pharmacy-success, darken($pharmacy-success, 10%));
+        border: none;
+    }
+
+    &.btn-danger {
+        background: linear-gradient(135deg, $pharmacy-danger, darken($pharmacy-danger, 10%));
+        border: none;
+    }
+}
+
+// Navigation
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 0;
+
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        margin: 0 0.125rem;
+
+        &.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        &:hover:not(.active) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+// Badge styles
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: 0.25rem;
+
+    &.bg-success {
+        background-color: $pharmacy-success !important;
+    }
+
+    &.bg-warning {
+        background-color: $pharmacy-warning !important;
+    }
+
+    &.bg-danger {
+        background-color: $pharmacy-danger !important;
+    }
+
+    &.bg-info {
+        background-color: $pharmacy-info !important;
+    }
+}
+
+// Form controls
+.form-control,
+.form-select {
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+
+    &:focus {
+        border-color: $pharmacy-primary;
+        box-shadow: 0 0 0 3px rgba($pharmacy-primary, 0.1);
+    }
+}
+
+// Alert styles
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+
+    &.alert-success {
+        background-color: rgba($pharmacy-success, 0.1);
+        color: darken($pharmacy-success, 20%);
+        border-left: 4px solid $pharmacy-success;
+    }
+
+    &.alert-danger {
+        background-color: rgba($pharmacy-danger, 0.1);
+        color: darken($pharmacy-danger, 20%);
+        border-left: 4px solid $pharmacy-danger;
+    }
+}
+
+// Avatar
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+// Custom utilities
+.text-gray-800 {
+    color: #1f2937 !important;
+}
+
+.text-gray-600 {
+    color: #4b5563 !important;
+}
+
+.border-left-primary {
+    border-left: 4px solid $pharmacy-primary !important;
+}
+
+.border-left-warning {
+    border-left: 4px solid $pharmacy-warning !important;
+}
+
+.border-left-danger {
+    border-left: 4px solid $pharmacy-danger !important;
+}
+
+.border-left-success {
+    border-left: 4px solid $pharmacy-success !important;
+}
+
+// Print styles
+@media print {
+    .navbar,
+    .footer,
+    .btn,
+    .actions {
+        display: none !important;
+    }
+
+    .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+}
